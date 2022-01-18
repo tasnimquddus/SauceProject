@@ -1,2 +1,4 @@
-package com.SpartaGlobal.GroupA.WebFramework.pom.Pages;public class YourCartPage {
+package com.SpartaGlobal.GroupA.WebFramework.pom.Pages;
+
+public class YourCartPage {
 }
