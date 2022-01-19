@@ -23,13 +23,13 @@ public class LoginTest {
         ChromeOptions chromeOptions = new ChromeOptions();
         // chromeOptions.addArguments("headless");
         webDriver = new ChromeDriver(chromeOptions);
-        loginPage = new LoginPage(webDriver);
+        loginPage = new LoginPage(webDriver, "standard_user", "secret_sauce");
     }
 
     @Test
     @DisplayName("Check Login")
     public void checkLoginWorks(){
-        String login = loginPage.login("standard_user", "secret_sauce");
+        String login = loginPage.login();
         MatcherAssert.assertThat(login, Matchers.equalTo("https://www.saucedemo.com/inventory.html"));
     }
 
