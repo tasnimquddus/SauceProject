@@ -1,7 +1,9 @@
 package com.SpartaGlobal.GroupA.WebFramework.pom.Pages;
 
+
 import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.YourCartPage;
 import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Social.FacebookPage;
+import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.products.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -13,15 +15,6 @@ import java.time.Duration;
 
 public class InventoryPage {
     private WebDriver webDriver;
-    private By CartPage = By.xpath("//*[@id=\"shopping_cart_container\"]/a");
-
-
-    private By FbPage = By.xpath(("/html/body/div[1]/div/footer/ul/li[2]"));
-    //#page_wrapper > footer > ul > li.social_facebook > a
-//            xpath("//*[@id=\"page_wrapper\"]/footer/ul/li[2]/a");
-
-
-    //*[@id="page_wrapper"]/footer/ul/li[2]/a
 
     public InventoryPage(WebDriver webDriver, String username, String password) {
         this.webDriver = webDriver;
@@ -33,7 +26,7 @@ public class InventoryPage {
         return webDriver.getCurrentUrl();
     }
 
-    public YourCartPage gotoCartPage() {
+     public YourCartPage gotoCartPage() {
 
         WebElement toCartPg = new WebDriverWait(webDriver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(CartPage));
@@ -41,34 +34,90 @@ public class InventoryPage {
         return new YourCartPage(webDriver);
     }
 
-//
-//
 
 
-//    public FacebookPage goToFacebookPage() {
-//        WebElement element = new WebDriverWait (webDriver, )
-//                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("")));
-//        webDriver.findElement(FbPage).click();
-//        WebElement FbPageResult = new WebDriverWait(webDriver, Duration.ofSeconds(10))
-//                .until(ExpectedConditions.elementToBeClickable(FbPage));
-//        FbPageResult.click();
+    public void addBackpackToCart() {
+        webDriver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+    }
 
-//        return new FacebookPage(webDriver);
-//    }
-//}
-    //WebElement vegetable = driver.findElement(By.className("tomatoes"));
-//
-//    public TwitterPage goToTwitterPage() {
-//        webDriver.findElement(By.className("social_twitter")).click();
-//        return new TwitterPage(webDriver);
-//    }
-//
-//    public LinkedInPage goToLinkedInPage() {
-//        webDriver.findElement(By.className("social_linkedin")).click();
-//        return new LinkedInPage(webDriver);
-//    }
+    public void removeBackpackFromCart() {
+        webDriver.findElement(By.id("remove-sauce-labs-backpack")).click();
+    }
 
+    public void addBikeLightToCart() {
+        webDriver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
+    }
 
+    public void removeBikeLightFromCart() {
+        webDriver.findElement(By.id("remove-sauce-labs-bike-light")).click();
+    }
+
+    public void addBoltTShirtToCart() {
+        webDriver.findElement(By.id("add-to-cart-sauce-labs-bolt-t-shirt")).click();
+    }
+
+    public void removeBoltTShirtFromCart() {
+        webDriver.findElement(By.id("remove-sauce-labs-bolt-t-shirt")).click();
+    }
+
+    public void addFleeceJacketToCart() {
+        webDriver.findElement(By.id("add-to-cart-sauce-labs-fleece-jacket")).click();
+    }
+
+    public void removeFleeceJacketFromCart() {
+        webDriver.findElement(By.id("remove-sauce-labs-fleece-jacket")).click();
+    }
+
+    public void addOnesieToCart() {
+        webDriver.findElement(By.id("add-to-cart-sauce-labs-onesie")).click();
+    }
+
+    public void removeOnesieFromCart() {
+        webDriver.findElement(By.id("remove-sauce-labs-onesie")).click();
+    }
+
+    public void addTestTShirtToCart() {
+        webDriver.findElement(By.id("add-to-cart-test.allthethings()-t-shirt-(red)")).click();
+    }
+
+    public void removeTestTShirtFromCart() {
+        webDriver.findElement(By.id("remove-test.allthethings()-t-shirt-(red)")).click();
+    }
+
+    public int itemsInCart() {
+        String number = webDriver.findElement(By.xpath("//*[@id=\"shopping_cart_container\"]/a/span")).getText();
+        return Integer.parseInt(number);
+    }
+
+    public BackpackPage goToBackpackPage() {
+        webDriver.findElement(By.linkText("Sauce Labs Backpack")).click();
+        return new BackpackPage(webDriver);
+    }
+
+    public BikeLightPage goToBikeLightPage() {
+        webDriver.findElement(By.linkText("Sauce Labs Bike Light")).click();
+        return new BikeLightPage(webDriver);
+    }
+
+    public BoltTShirtPage goToBoltTShirtPage() {
+        webDriver.findElement(By.linkText("Sauce Labs Bolt T-Shirt")).click();
+        return new BoltTShirtPage(webDriver);
+    }
+
+    public FleeceJacketPage goToFleeceJacketPage() {
+        webDriver.findElement(By.linkText("Sauce Labs Fleece Jacket")).click();
+        return new FleeceJacketPage(webDriver);
+    }
+
+    public OnesiePage goToOnesiePage() {
+        webDriver.findElement(By.linkText("Sauce Labs Onesie")).click();
+        return new OnesiePage(webDriver);
+    }
+
+    public TestTShirtPage goToTestTShirtPage() {
+        webDriver.findElement(By.linkText("Test.allTheThings() T-Shirt (Red)")).click();
+        return new TestTShirtPage(webDriver);
+    }
 }
 
 

@@ -1,5 +1,6 @@
 package com.SpartaGlobal.GroupA.WebFramework.pom.Pages;
 
+import com.SpartaGlobal.GroupA.WebFramework.pom.Tests.NavigationTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -9,17 +10,18 @@ public class LoginPage {
     private String username;
     private String password;
 
+
+
     public LoginPage(WebDriver webDriver, String username, String password){
+        this.webDriver = webDriver;
         this.username = username;
         this.password = password;
-        this.webDriver = webDriver;
         goToLoginPage();
     }
 
     private void goToLoginPage() {
         webDriver.get(LOGINURL);
     }
-
 
     public String getURL() {
         return webDriver.getCurrentUrl();
@@ -31,4 +33,6 @@ public class LoginPage {
         webDriver.findElement(By.name("login-button")).click();
         return webDriver.getCurrentUrl();
     }
+
+
 }

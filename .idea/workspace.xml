@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3503ce05-0a70-45dd-9b3a-ce81f24e1673" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/LoggingInStepdefs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GroupASauceDemo/src/test/resources/features/websiteLogin.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Pages/InventoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Pages/InventoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupASauceDemo/src/test/resources/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/GroupASauceDemo/src/test/resources/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupASauceDemo/target/test-classes/chromedriver" beforeDir="false" />
+    </list>
+    <list id="d384c4a6-b0c9-4ee5-a740-c6e6130e9a97" name="Changes by Notch" comment="">
+      <change beforePath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Tests/LoginTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Tests/LoginTest.java">
+      <ranges>
+        <range start1="4" end1="5" start2="4" end2="5" changelist="d384c4a6-b0c9-4ee5-a740-c6e6130e9a97" />
+        <range start1="6" end1="6" start2="6" end2="8" changelist="3503ce05-0a70-45dd-9b3a-ce81f24e1673" />
+        <range start1="9" end1="9" start2="11" end2="12" changelist="d384c4a6-b0c9-4ee5-a740-c6e6130e9a97" />
+        <range start1="13" end1="14" start2="16" end2="17" changelist="3503ce05-0a70-45dd-9b3a-ce81f24e1673" />
+        <range start1="25" end1="26" start2="28" end2="29" changelist="3503ce05-0a70-45dd-9b3a-ce81f24e1673" />
+        <range start1="31" end1="33" start2="34" end2="37" changelist="3503ce05-0a70-45dd-9b3a-ce81f24e1673" />
+        <range start1="34" end1="34" start2="38" end2="47" changelist="d384c4a6-b0c9-4ee5-a740-c6e6130e9a97" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/GroupASauceDemo/src/test/java/com/SpartaGlobal/GroupA/WebFramework/pom/Pages/LoginPage.java">
+      <ranges>
+        <range start1="8" end1="8" start2="8" end2="10" changelist="3503ce05-0a70-45dd-9b3a-ce81f24e1673" />
+        <range start1="9" end1="10" start2="11" end2="14" changelist="3503ce05-0a70-45dd-9b3a-ce81f24e1673" />
+        <range start1="23" end1="24" start2="27" end2="28" changelist="3503ce05-0a70-45dd-9b3a-ce81f24e1673" />
+        <range start1="29" end1="29" start2="33" end2="39" changelist="d384c4a6-b0c9-4ee5-a740-c6e6130e9a97" />
+      </ranges>
+    </file>
+  </component>
+  <component name="ProjectId" id="23sae79iUxFvrvP5rGbbeFMcoOX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jalni\Documents\SDET Training\Week1\Wk8\GroupA\SauceProject\GroupASauceDemo\src\test\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cucumber Java.Scenario: ">
+    <configuration name="Scenario: " type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/GroupASauceDemo/src/test/resources/features/websiteLogin.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GroupASauceDemo" />
+      <option name="NAME_FILTER" value="^$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: " />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.checkLoginWorks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GroupASauceDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.SpartaGlobal.GroupA.WebFramework.pom.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.SpartaGlobal.GroupA.WebFramework.pom.Tests" />
+      <option name="MAIN_CLASS_NAME" value="com.SpartaGlobal.GroupA.WebFramework.pom.Tests.LoginTest" />
+      <option name="METHOD_NAME" value="checkLoginWorks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.checkWrongLoginWorks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GroupASauceDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.SpartaGlobal.GroupA.WebFramework.pom.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.SpartaGlobal.GroupA.WebFramework.pom.Tests" />
+      <option name="MAIN_CLASS_NAME" value="com.SpartaGlobal.GroupA.WebFramework.pom.Tests.LoginTest" />
+      <option name="METHOD_NAME" value="checkWrongLoginWorks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Scenario: " />
+        <item itemvalue="JUnit.LoginTest.checkWrongLoginWorks" />
+        <item itemvalue="JUnit.LoginTest.checkLoginWorks" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3503ce05-0a70-45dd-9b3a-ce81f24e1673" name="Changes" comment="" />
+      <created>1642525347707</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642525347707</updated>
+      <workItem from="1642525350638" duration="19753000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
