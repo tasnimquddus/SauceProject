@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class CartPageTest {
+public class CheckoutInfoTests {
     private static WebDriver webDriver;
     private LoginPage loginPage;
     private InventoryPage inventoryPage;
@@ -33,27 +33,14 @@ public class CartPageTest {
     }
 
     @Test
-    @DisplayName("Check Inventory Page goes to Your Cart page")
-    public void InventoryToCartPage(){
-      String login = loginPage.login();
-      Assertions.assertEquals("https://www.saucedemo.com/cart.html",  inventoryPage.gotoCartPage().getURL());
-
-    }
-
-    @Test
-    @DisplayName("Check Continue Shopping button on Cart Page goes back to Inventory Page")
-    public void CartToInventoryPage(){
+    @DisplayName("Check Cancel button on Check Your Information Pg to Your cart Page")
+    public void CheckoutToCartPage(){
         String login = loginPage.login();
         YourCartPage cartPage  = inventoryPage.gotoCartPage();
-        Assertions.assertEquals("https://www.saucedemo.com/inventory.html", yourCartPage.gotoInventoryPage().getURL());
-    }
+        CheckoutInfoPage checkoutPg = yourCartPage.gotoCheckoutInfoPage();
 
-    @Test
-    @DisplayName("Check Checkout button on Cart Page goes back to Checkout Information page")
-    public void CartToCheckoutPage(){
-        String login = loginPage.login();
-        YourCartPage cartPage  = inventoryPage.gotoCartPage();
-        Assertions.assertEquals("https://www.saucedemo.com/checkout-step-one.html", yourCartPage.gotoCheckoutInfoPage().getURL());
+        Assertions.assertEquals("https://www.saucedemo.com/cart.html",  checkoutPg.gotoYourCartPage().getURL());
+
     }
 
 

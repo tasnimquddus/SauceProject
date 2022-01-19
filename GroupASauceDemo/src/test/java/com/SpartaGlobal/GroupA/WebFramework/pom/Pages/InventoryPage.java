@@ -1,46 +1,60 @@
 package com.SpartaGlobal.GroupA.WebFramework.pom.Pages;
 
-import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.CoCartPage;
+import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.YourCartPage;
 import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Social.FacebookPage;
-import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Social.LinkedInPage;
-import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Social.TwitterPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
-
-import static org.openqa.selenium.By.cssSelector;
 
 public class InventoryPage {
     private WebDriver webDriver;
-    private By CartPage =  By.xpath("//*[@id=\"shopping_cart_container\"]/a");
+    private By CartPage = By.xpath("//*[@id=\"shopping_cart_container\"]/a");
 
+
+    private By FbPage = By.xpath(("/html/body/div[1]/div/footer/ul/li[2]"));
+    //#page_wrapper > footer > ul > li.social_facebook > a
+//            xpath("//*[@id=\"page_wrapper\"]/footer/ul/li[2]/a");
+
+
+    //*[@id="page_wrapper"]/footer/ul/li[2]/a
 
     public InventoryPage(WebDriver webDriver) {
         this.webDriver = webDriver;
 
     }
 
-    public void getURL() {
-        webDriver.getCurrentUrl();
+    public String getURL() {
+        return webDriver.getCurrentUrl();
     }
 
-    public CoCartPage gotoCartPage() {
-        WebElement firstResult = new WebDriverWait(webDriver, Duration.ofSeconds(10))
+    public YourCartPage gotoCartPage() {
+
+        WebElement toCartPg = new WebDriverWait(webDriver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(CartPage));
-        webDriver.findElement(CartPage).click();
-        return new CoCartPage(webDriver);
+        toCartPg.click();
+        return new YourCartPage(webDriver);
     }
-}
+
+//
+//
+
 
 //    public FacebookPage goToFacebookPage() {
-//        WebElement FbPage = webDriver.findElement(By.cssSelector("Facebook")).click();
+//        WebElement element = new WebDriverWait (webDriver, )
+//                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("")));
+//        webDriver.findElement(FbPage).click();
+//        WebElement FbPageResult = new WebDriverWait(webDriver, Duration.ofSeconds(10))
+//                .until(ExpectedConditions.elementToBeClickable(FbPage));
+//        FbPageResult.click();
+
 //        return new FacebookPage(webDriver);
 //    }
+//}
     //WebElement vegetable = driver.findElement(By.className("tomatoes"));
 //
 //    public TwitterPage goToTwitterPage() {
@@ -54,7 +68,6 @@ public class InventoryPage {
 //    }
 
 
-
-
+}
 
 
