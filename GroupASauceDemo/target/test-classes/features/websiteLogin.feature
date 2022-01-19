@@ -76,15 +76,4 @@ Feature: Logging into the Sauce website
      Then I will be told Epic sadface: Sorry, this user has been locked out.
     #test the locked out account
 
-#  Scenario Outline: Logging in
-#
-#    Given I am on the log in page
-#    When I input the <username> and <password>
-#    Then I should get an appropriate <response>
-#    Examples:
-#      | username      | password     | response                                                                  |
-#      | bsn           | secret_sauce | Epic sadface: Username and password do not match any user in this service |
-#      | standard_user | secret       | Epic sadface: Username and password do not match any user in this service |
-#      |               | secret_sauce | Epic sadface: Username is required.                                       |
-#      | standard_user |              | Epic sadface: Password is required.                                       |
-#
+

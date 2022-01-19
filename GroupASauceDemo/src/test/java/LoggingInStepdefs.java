@@ -32,8 +32,6 @@ public class LoggingInStepdefs {
     @When("I enter the correct user details")
     public void iEnterTheCorrectUserDetails() {
         loginPage = new LoginPage(webDriver, "standard_user", "secret_sauce");
-        loginPage = new LoginPage(webDriver, "problem_user", "secret_sauce");
-        loginPage = new LoginPage(webDriver, "performance_glitch_user", "secret_sauce");
     }
 
     @When("I enter the correct problem user details")
