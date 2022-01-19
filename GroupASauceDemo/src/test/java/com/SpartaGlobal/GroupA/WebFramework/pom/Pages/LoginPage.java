@@ -10,9 +10,14 @@ public class LoginPage {
     private String password;
 
     public LoginPage(WebDriver webDriver, String username, String password){
+
         this.username = username;
         this.password = password;
+
+
         this.webDriver = webDriver;
+        this.username = username;
+        this.password = password;
         goToLoginPage();
     }
 

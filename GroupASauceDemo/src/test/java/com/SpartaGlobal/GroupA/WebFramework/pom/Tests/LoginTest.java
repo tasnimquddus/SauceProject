@@ -17,20 +17,22 @@ public class LoginTest {
     private static final String DRIVER_LOCATION = "src/test/resources/chromedriver.exe";
 
     @BeforeAll
-    static void beforeAll(){
+    static void beforeAll() {
         System.setProperty("webdriver.chrome.driver", DRIVER_LOCATION);
     }
 
     @BeforeEach
-    void setupEach(){
+    void setupEach() {
         ChromeOptions chromeOptions = new ChromeOptions();
         // chromeOptions.addArguments("headless");
         webDriver = new ChromeDriver(chromeOptions);
+        loginPage = new LoginPage(webDriver, "standard_user", "secret_sauce");
 
     }
 
     @Test
     @DisplayName("Check Login")
+
     public void checkLoginWorks(){
         loginPage = new LoginPage(webDriver, "standard_user", "secret_sauce");
         String login = loginPage.login();
@@ -39,17 +41,23 @@ public class LoginTest {
 
     @Test
     @DisplayName("Check Wrong Login")
-    public void checkWrongLoginWorks(){
+    public void checkWrongLoginWorks() {
         loginPage = new LoginPage(webDriver, "", "secret_sauce");
         loginPage.login();
         var error = webDriver.findElement(By.className("error-message-container"));
         MatcherAssert.assertThat(error.getText(), containsString("Epic sadface: Username is required"));
     }
 
+
+
     @AfterEach
-    void teardown(){ webDriver.close(); }
+    void teardown() {
+        webDriver.close();
+    }
 
     @AfterAll
-    static void teardownAll(){ webDriver.quit();}
+    static void teardownAll() {
+        webDriver.quit();
+    }
 
 }
