@@ -11,32 +11,36 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class LoginTest {
     private static WebDriver webDriver;
     private LoginPage loginPage;
-    private static final String DRIVER_LOCATION = "src/test/resources/chromedriver";
+    private static final String DRIVER_LOCATION = "src/test/resources/chromedriver.exe";
 
     @BeforeAll
-    static void beforeAll(){
+    static void beforeAll() {
         System.setProperty("webdriver.chrome.driver", DRIVER_LOCATION);
     }
 
     @BeforeEach
-    void setupEach(){
+    void setupEach() {
         ChromeOptions chromeOptions = new ChromeOptions();
         // chromeOptions.addArguments("headless");
         webDriver = new ChromeDriver(chromeOptions);
-        loginPage = new LoginPage(webDriver);
+        loginPage = new LoginPage(webDriver, "standard_user", "secret_sauce");
     }
 
     @Test
     @DisplayName("Check Login")
-    public void checkLoginWorks(){
-        String login = loginPage.login("standard_user", "secret_sauce");
+    public void checkLoginWorks() {
+        String login = loginPage.login();
         MatcherAssert.assertThat(login, Matchers.equalTo("https://www.saucedemo.com/inventory.html"));
     }
 
     @AfterEach
-    void teardown(){ webDriver.close(); }
+    void teardown() {
+        webDriver.close();
+    }
 
     @AfterAll
-    static void teardownAll(){ webDriver.quit();}
+    static void teardownAll() {
+        webDriver.quit();
+    }
 
 }
