@@ -20,7 +20,6 @@ public class LoginPage {
         webDriver.get(LOGINURL);
     }
 
-
     public String getURL() {
         return webDriver.getCurrentUrl();
     }
@@ -31,4 +30,6 @@ public class LoginPage {
         webDriver.findElement(By.name("login-button")).click();
         return webDriver.getCurrentUrl();
     }
+
+
 }

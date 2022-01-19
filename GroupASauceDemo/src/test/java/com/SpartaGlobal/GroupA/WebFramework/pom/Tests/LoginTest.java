@@ -27,6 +27,7 @@ public class LoginTest {
     }
 
     @Test
+
     @DisplayName("Check Login")
     public void checkLoginWorks() {
         String login = loginPage.login();

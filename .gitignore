@@ -1,6 +1,12 @@
 # Compiled class file
 *.class
 
+# DS_Store
+.DS_Store
+
+# exe
+*.exe
+
 # Log file
 *.log
 

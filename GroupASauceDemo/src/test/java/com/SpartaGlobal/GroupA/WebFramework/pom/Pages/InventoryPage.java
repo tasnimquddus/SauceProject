@@ -1,8 +1,15 @@
 package com.SpartaGlobal.GroupA.WebFramework.pom.Pages;
 
+
+import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.YourCartPage;
 import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.products.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class InventoryPage {
     private WebDriver webDriver;
@@ -12,6 +19,12 @@ public class InventoryPage {
         LoginPage loginPage = new LoginPage(webDriver, username, password);
         loginPage.login();
     }
+
+         public YourCartPage gotoCartPage() {
+        webDriver.findElement(By.className("shopping_cart_link")).click();
+        return new YourCartPage(webDriver);
+    }
+
 
     public String getURL() {
         return webDriver.getCurrentUrl();
@@ -99,4 +112,8 @@ public class InventoryPage {
         webDriver.findElement(By.linkText("Test.allTheThings() T-Shirt (Red)")).click();
         return new TestTShirtPage(webDriver);
     }
+
+
 }
+
+
