@@ -1,21 +1,21 @@
 package com.SpartaGlobal.GroupA.WebFramework.pom.Tests;
 
 import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.CheckoutInfoPage;
-import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.YourCartPage;
+import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.CoCompletePage;
+import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.CoOverviewPage;
 import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.InventoryPage;
-import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.LoginPage;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class CheckoutInfoTests {
+public class CompleteOrderTests {
     private static WebDriver webDriver;
-    private LoginPage loginPage;
     private InventoryPage inventoryPage;
-    private YourCartPage yourCartPage;
-    private CheckoutInfoPage checkoutInfoPage;
     private static final String DRIVER_LOCATION = "src/test/resources/chromedriver";
+    private CoOverviewPage coOverviewPage;
+    private CheckoutInfoPage checkoutInfoPage;
+    private CoCompletePage coCompletePage;
 
     @BeforeAll
     static void beforeAll(){
@@ -28,24 +28,17 @@ public class CheckoutInfoTests {
         // chromeOptions.addArguments("headless");
         webDriver = new ChromeDriver(chromeOptions);
         inventoryPage = new InventoryPage(webDriver, "standard_user", "secret_sauce");
-
         checkoutInfoPage = inventoryPage.gotoCartPage().goToCheckoutInformation();
-
-    }
-
-    @Test
-    @DisplayName("Check Cancel button on Check Your Information Pg to Your cart Page")
-    public void CheckoutToOverviewPage(){
         checkoutInfoPage.fillInfo("a", "a", "a");
-        Assertions.assertEquals("https://www.saucedemo.com/checkout-step-two.html",  checkoutInfoPage.continueCheckout().getURL());
+        coOverviewPage = checkoutInfoPage.continueCheckout();
+        coCompletePage = coOverviewPage.finishCheckout();
 
     }
 
     @Test
     @DisplayName("Check Cancel button on Check Your Information Pg to Your cart Page")
-    public void CheckoutToCartPage(){
-        checkoutInfoPage.gotoYourCartPage();
-        Assertions.assertEquals("https://www.saucedemo.com/cart.html", checkoutInfoPage.getURL() );
+    public void completeOrder(){
+        Assertions.assertEquals("https://www.saucedemo.com/checkout-complete.html", coCompletePage.getURL() );
 
     }
 
@@ -54,5 +47,7 @@ public class CheckoutInfoTests {
     void teardown(){ webDriver.close(); }
 
     @AfterAll
-    static void teardownAll(){ webDriver.quit();}
+    static void teardownAll(){webDriver.quit();}
+
+
 }

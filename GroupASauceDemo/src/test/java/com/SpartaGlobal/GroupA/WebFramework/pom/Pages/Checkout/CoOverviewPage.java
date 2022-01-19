@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class CoOverviewPage {
     private WebDriver webDriver;
-// private By CancelBtn = By.xpath("//*[@id=\"cancel\"]");
-// private By CancelBtn = By.xpath("//*[@id=\"cancel\"]");
 
 
     public CoOverviewPage(WebDriver webDriver) {
@@ -15,5 +13,14 @@ public class CoOverviewPage {
 
     public String getURL() {
         return webDriver.getCurrentUrl();
+    }
+
+    public void cancelCheckout() {
+        webDriver.findElement(By.id("cancel")).click();
+    }
+
+    public CoCompletePage finishCheckout() {
+        webDriver.findElement(By.id("finish")).click();
+        return new CoCompletePage(webDriver);
     }
 }

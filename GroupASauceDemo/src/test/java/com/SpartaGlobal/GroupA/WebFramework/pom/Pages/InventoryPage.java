@@ -23,9 +23,10 @@ public class InventoryPage {
 
     //*[@id="page_wrapper"]/footer/ul/li[2]/a
 
-    public InventoryPage(WebDriver webDriver) {
+    public InventoryPage(WebDriver webDriver, String username, String password) {
         this.webDriver = webDriver;
-
+        LoginPage loginPage = new LoginPage(webDriver, username, password);
+        loginPage.login();
     }
 
     public String getURL() {

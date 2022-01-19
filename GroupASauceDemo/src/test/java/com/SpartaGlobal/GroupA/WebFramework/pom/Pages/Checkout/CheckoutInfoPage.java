@@ -9,25 +9,33 @@ import java.time.Duration;
 
 public class CheckoutInfoPage {
     private final WebDriver webDriver;
-    private By CancelBtn = By.xpath("//*[@id=\"cancel\"]");
 
 
 
-    public CheckoutInfoPage(WebDriver webDriver) {
+    public CheckoutInfoPage(WebDriver webDriver)
+     {
         this.webDriver = webDriver;
+
     }
 
     public String getURL() {
         return webDriver.getCurrentUrl();
     }
 
-       public YourCartPage gotoYourCartPage() {
-        webDriver.findElement(CancelBtn).click();
+       public void gotoYourCartPage() {
+        webDriver.findElement(By.id("cancel")).click();
+    }
 
-//        WebElement toCartPg = new WebDriverWait(webDriver, Duration.ofSeconds(10))
-//                .until(ExpectedConditions.elementToBeClickable(OverviewPg));
-//        gotoOverviewPg.click();
-        return new YourCartPage(webDriver);
+        public CoOverviewPage continueCheckout() {
+            webDriver.findElement(By.name("continue")).click();
+            return new CoOverviewPage(webDriver);
+        }
+
+    public void fillInfo(String firstname, String lastname, String postcode) {
+        webDriver.findElement(By.name("firstName")).sendKeys(firstname);
+        webDriver.findElement(By.name("lastName")).sendKeys(lastname);
+        webDriver.findElement(By.name("postalCode")).sendKeys(postcode);
+
     }
 
 }

@@ -11,11 +11,6 @@ import java.time.Duration;
 
 public class YourCartPage {
     private final WebDriver webDriver;
-    private By InventoryPg = By.xpath("//*[@id=\"continue-shopping\"]");
-    private By CheckoutBtn = By.xpath("//*[@id=\"checkout\"]");
-
-
-
 
     public YourCartPage(WebDriver webDriver)
     {
@@ -27,20 +22,14 @@ public class YourCartPage {
         return webDriver.getCurrentUrl();
     }
 
-    public InventoryPage gotoInventoryPage() {
-        WebElement toInventoryPg = new WebDriverWait(webDriver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(InventoryPg));
 
-        toInventoryPg.click();
-        return new InventoryPage(webDriver);
+    public void goBackToInventory() {
+        webDriver.findElement(By.id("continue-shopping")).click();
     }
 
-    public CheckoutInfoPage gotoCheckoutInfoPage() {
-        WebElement toCheckoutInfo = new WebDriverWait(webDriver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(CheckoutBtn));
-        toCheckoutInfo.click();
+    public CheckoutInfoPage goToCheckoutInformation() {
+        webDriver.findElement(By.id("checkout")).click();
         return new CheckoutInfoPage(webDriver);
     }
-
 
 }

@@ -1,21 +1,19 @@
 package com.SpartaGlobal.GroupA.WebFramework.pom.Tests;
 
 import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.CheckoutInfoPage;
-import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.YourCartPage;
+import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.Checkout.CoOverviewPage;
 import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.InventoryPage;
-import com.SpartaGlobal.GroupA.WebFramework.pom.Pages.LoginPage;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class CartPageTest {
+public class CheckoutOverviewTests {
     private static WebDriver webDriver;
-    private LoginPage loginPage;
     private InventoryPage inventoryPage;
-    private YourCartPage yourCartPage;
-    private CheckoutInfoPage checkoutInfoPage;
     private static final String DRIVER_LOCATION = "src/test/resources/chromedriver";
+    private CoOverviewPage coOverviewPage;
+    private CheckoutInfoPage checkoutInfoPage;
 
     @BeforeAll
     static void beforeAll(){
@@ -28,30 +26,30 @@ public class CartPageTest {
         // chromeOptions.addArguments("headless");
         webDriver = new ChromeDriver(chromeOptions);
         inventoryPage = new InventoryPage(webDriver, "standard_user", "secret_sauce");
-        yourCartPage = inventoryPage.gotoCartPage();
+        checkoutInfoPage = inventoryPage.gotoCartPage().goToCheckoutInformation();
+        checkoutInfoPage.fillInfo("a", "a", "a");
+        coOverviewPage = checkoutInfoPage.continueCheckout();
     }
 
     @Test
-    @DisplayName("Check Inventory Page goes to Your Cart page")
-    public void InventoryToCartPage(){
-      Assertions.assertEquals("https://www.saucedemo.com/cart.html",  inventoryPage.gotoCartPage().getURL());
-
+    @DisplayName("Check correct current url")
+    public void currentURLTest() {
+        Assertions.assertEquals("https://www.saucedemo.com/checkout-step-two.html", coOverviewPage.getURL());
     }
 
     @Test
-    @DisplayName("Check Continue Shopping button on Cart Page goes back to Inventory Page")
-    public void CartToInventoryPage(){
-        yourCartPage.goBackToInventory();
-        Assertions.assertEquals("https://www.saucedemo.com/inventory.html", yourCartPage.getURL());
+    @DisplayName("Check cancel button")
+    public void cancelButtonTest() {
+        coOverviewPage.cancelCheckout();
+        Assertions.assertEquals("https://www.saucedemo.com/inventory.html", coOverviewPage.getURL());
     }
 
     @Test
-    @DisplayName("Check Checkout button on Cart Page goes back to Checkout Information page")
-    public void CartToCheckoutPage(){
-        yourCartPage.goToCheckoutInformation();
-        Assertions.assertEquals("https://www.saucedemo.com/checkout-step-one.html", yourCartPage.getURL());
+    @DisplayName("Check finish button")
+    public void finishButtonTest() {
+        coOverviewPage.finishCheckout();
+        Assertions.assertEquals("https://www.saucedemo.com/checkout-complete.html", coOverviewPage.getURL());
     }
-
 
     @AfterEach
     void teardown(){ webDriver.close(); }
